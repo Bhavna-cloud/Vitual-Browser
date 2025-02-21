@@ -10,10 +10,10 @@ RUN set -eux; \
     apt-get install -y --no-install-recommends openbox xz-utils bzip2 libgtk-3-0 libdbus-glib-1-2; \
     \
     # Fetch latest Firefox release
-    wget -O /tmp/firefox-setup.tar.bz2 "${SRC_URL}"; \
+    wget -O /tmp/firefox-setup.tar.xz "${SRC_URL}"; \
     mkdir -p /usr/lib/firefox; \
-    tar -xjf /tmp/firefox-setup.tar.bz2 -C /usr/lib/firefox --strip-components=1; \
-    rm -f /tmp/firefox-setup.tar.bz2; \
+    tar -xJf /tmp/firefox-setup.tar.xz -C /usr/lib/firefox --strip-components=1; \
+    rm -f /tmp/firefox-setup.tar.xz; \
     ln -s /usr/lib/firefox/firefox /usr/bin/firefox; \
     \
     # Create a profile directory
@@ -26,7 +26,7 @@ RUN set -eux; \
     rm -rf /var/lib/apt/lists/* /var/cache/apt/*
 
 #
-# Ensure the directory exists before copying
+# Ensure necessary directories exist before copying
 RUN mkdir -p /usr/lib/firefox/defaults/pref /usr/lib/firefox/distribution
 
 #
