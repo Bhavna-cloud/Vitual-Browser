@@ -13,3 +13,7 @@ services:
       NEKO_PASSWORD_ADMIN: admin
       NEKO_EPR: 52000-52100
       NEKO_ICELITE: 1
+      NEKO_STUN: stun:stun.l.google.com:19302
+      NEKO_TURN: turn:192.168.122.212:5349
+      NEKO_TURN_USER: neko
+      NEKO_TURN_PASS: strongpassword
